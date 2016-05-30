@@ -1,0 +1,83 @@
+<!-- Imports polymer -->
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-media-query/iron-media-query.html">
+<!-- Defines element markup -->
+<dom-module id="vcard-chronological-facts-item">
+    <template>
+        <style>
+        h4 {
+            font-size: 13px;
+            color: #141414;
+            letter-spacing: 1px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin: 0 0 10px;
+        }
+        
+        span {
+            color: #b4b4b4;
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        .year[media-query-992] {
+            float: left;
+            width: 150px;
+            padding: 0 20px;
+            border-right: 1px solid #dcdcdc;
+            text-align: center;
+        }
+        
+        .box-content[media-query-992] {
+            padding-left: 170px;
+        }
+        
+        .year[media-query-992] div {
+            position: relative;
+            top: 50%;
+            -webkit-transform: translate(0, -50%);
+            -moz-transform: translate(0, -50%);
+            -ms-transform: translate(0, -50%);
+            -o-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+        }
+        
+        .box-content {
+            padding: 20px 0;
+        }
+        </style>
+        <!-- Así mostramos las variables definidas {{}} -->
+        <iron-media-query query="(min-width: 992px)" query-matches="{{mediaQuery992}}"></iron-media-query>
+        <div class="year" media-query-992$="{{mediaQuery992}}" data-mh$="{{matchHeight}}">
+            <div>
+                <h4>{{chronologicalFactsItem.fecha}}</h4>
+                <span>{{chronologicalFactsItem.proyecto}}</span>
+            </div>
+        </div>
+        <div class="box-content" media-query-992$="{{mediaQuery992}}" data-mh$="{{matchHeight}}">
+            <h4>{{chronologicalFactsItem.puesto}}</h4>
+            <p>{{chronologicalFactsItem.description}}</p>
+        </div>
+    </template>
+</dom-module>
+<!-- Registers custom element -->
+<script>
+Polymer({
+    is: 'vcard-chronological-facts-item', //Registramos el nombre del componente
+    properties: { //Propiedades del componente
+        chronologicalFactsItem: {
+            type: Object,
+            value: {
+                fecha: '00-00-0000', //y valor por defecto
+                proyecto: 'Proyect 0', //y valor por defecto
+                puesto: 'Developer', //y valor por defecto
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' //y valor por defecto
+            }
+        },
+        matchHeight: {
+            type: String,
+            value: 'mh-chronological-facts-item'
+        }
+    }
+});
+</script>
