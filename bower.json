@@ -1,7 +1,7 @@
 {
   "name": "vcard-chronological-facts-item",
-  "version": "0.0.1",
-  "description": "Footer",
+  "version": "0.0.2",
+  "description": "Chronological facts item",
   "private": true,
   "authors": [
     "YCLIN"
