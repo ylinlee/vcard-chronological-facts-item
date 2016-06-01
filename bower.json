@@ -1,6 +1,6 @@
 {
   "name": "vcard-chronological-facts-item",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Chronological facts item",
   "private": true,
   "authors": [
@@ -19,6 +19,6 @@
   "license": "MIT",
   "ignore": [],
   "dependencies": {
-        "polymer": "Polymer/polymer#1.0.0"
+    "polymer": "Polymer/polymer#1.4.0"
   }
 }
