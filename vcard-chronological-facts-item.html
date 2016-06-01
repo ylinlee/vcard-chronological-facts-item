@@ -42,13 +42,20 @@
             transform: translate(0, -50%);
         }
         
+        .year[media-query-991] {
+            padding-bottom: 5px;
+            border-bottom: 1px solid #dcdcdc;
+            text-align: left;
+        }
+        
         .box-content {
             padding: 20px 0;
         }
         </style>
         <!-- Así mostramos las variables definidas {{}} -->
         <iron-media-query query="(min-width: 992px)" query-matches="{{mediaQuery992}}"></iron-media-query>
-        <div class="year" media-query-992$="{{mediaQuery992}}" data-mh$="{{matchHeight}}">
+        <iron-media-query query="(max-width: 991px)" query-matches="{{mediaQuery991}}"></iron-media-query>
+        <div class="year" media-query-992$="{{mediaQuery992}}" media-query-991$="{{mediaQuery991}}"data-mh$="{{matchHeight}}">
             <div>
                 <h4>{{chronologicalFactsItem.fecha}}</h4>
                 <span>{{chronologicalFactsItem.proyecto}}</span>
